@@ -3,31 +3,25 @@ organization in ThisBuild := "com.github.dwhjames"
 
 licenses in ThisBuild += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-version in ThisBuild := "0.7.0"
+version in ThisBuild := "0.7.1"
 
-
-scalaVersion in ThisBuild := "2.11.6"
-
-crossScalaVersions in ThisBuild := Seq("2.10.4", "2.11.6")
+scalaVersion in ThisBuild := "2.12.6"
 
 scalacOptions in ThisBuild ++= Seq(
     "-deprecation",
     "-encoding", "UTF-8",
     "-feature",
     "-unchecked",
-    "-Xfatal-warnings",
     "-Xfuture",
     "-Xlint",
     "-Yno-adapted-args",
     "-Ywarn-dead-code",
     "-Ywarn-numeric-widen",
-    "-Ywarn-value-discard"
+    "-Ywarn-value-discard",
+    "-Ywarn-unused-import"
   )
 
-scalacOptions in ThisBuild ++= (
-    if (scalaVersion.value.startsWith("2.10")) Nil
-    else List("-Ywarn-unused-import")
-  )
+scalacOptions in ThisBuild ++= Nil
 
 
 resolvers in ThisBuild ++= Seq(
@@ -42,8 +36,9 @@ shellPrompt in ThisBuild := CustomShellPrompt.customPrompt
 
 
 // configure publishing to bintray
-bintray.Plugin.bintraySettings
+//bintray.Plugin.bintraySettings
 
+publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
 
 lazy val datomisca = project.
   in(file(".")).

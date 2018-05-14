@@ -17,14 +17,13 @@
 package datomisca
 package macros
 
-import scala.language.experimental.macros
-import scala.reflect.macros.whitebox.Context
+import clojure.lang.Keyword
+import clojure.{lang => clj}
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable
-
-import clojure.lang.Keyword
-import clojure.{lang => clj}
+import scala.language.experimental.macros
+import scala.reflect.macros.whitebox.Context
 
 
 private[datomisca] object MacroImpl {

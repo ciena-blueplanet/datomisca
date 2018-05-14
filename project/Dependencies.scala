@@ -3,12 +3,12 @@ import sbt._
 object Dependencies {
 
   object V {
-    val macroParadise = "2.0.1"
+    val macroParadise = "2.1.1"
 
-    val datomic       = "0.9.5130"
+    val datomic       = "0.9.5561.50"
 
-    val specs2        = "2.3.12"
-    val scalaTest     = "2.2.4"
+    val specs2        = "2.4.17"
+    val scalaTest     = "3.0.5"
   }
 
   object Compile {
